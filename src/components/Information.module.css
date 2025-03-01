@@ -1,0 +1,29 @@
+.information {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+  backdrop-filter: blur(5px); /* Размытие фона */
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.information.winner {
+  background: rgba(0, 255, 136, 0.2); /* Зеленый для победы */
+  color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.information.draw {
+  background: rgba(255, 165, 0, 0.2); /* Оранжевый для ничьей */
+  color: #ffa500;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+}
+
+.information.currentPlayer {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
