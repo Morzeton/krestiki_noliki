@@ -4,12 +4,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #1e1e2f 0%,
-    #2a2a40 100%
-  ); /* Темный градиент */
-  padding: 20px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  box-sizing: border-box;
 }
 
 .resetButton {
@@ -18,7 +17,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
-  background: #da312583; /* Неоновый розовый */
+  background: #da312583;
   border: none;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
