@@ -1,36 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
 import styles from "./Field.module.css";
 
-export const FieldLayout = ({ field, onBtnClick }) => {
+export default function Field({ field, onCellClick, isGameEnded }) {
     return (
         <div className={styles.gameField}>
-            {field.map((btn, index) => (
+            {field.map((value, idx) => (
                 <button
-                    key={index}
+                    key={idx}
+                    onClick={() => onCellClick(idx)}
+                    disabled={isGameEnded || value !== null}
                     className={`${styles.gameBtn} ${
-                        btn === "x" ? styles.x : btn === "o" ? styles.o : ""
-                    }`}
-                    onClick={() => onBtnClick(index)}
-                    disabled={btn !== ""}
+                        value === "X" ? styles.x : ""
+                    } ${value === "O" ? styles.o : ""}`}
                 >
-                    {btn}
+                    {value}
                 </button>
             ))}
         </div>
     );
-};
-
-FieldLayout.propTypes = {
-    field: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onBtnClick: PropTypes.func.isRequired,
-};
-
-export const Field = ({ field, onBtnClick }) => {
-    return <FieldLayout field={field} onBtnClick={onBtnClick} />;
-};
-
-Field.propTypes = {
-    field: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onBtnClick: PropTypes.func.isRequired,
-};
+}
